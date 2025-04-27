@@ -1,0 +1,139 @@
+Python 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import random
+>>> import lyricsgenius
+Traceback (most recent call last):
+  File "<python-input-1>", line 1, in <module>
+    import lyricsgenius
+ModuleNotFoundError: No module named 'lyricsgenius'
+>>> import spacy
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    import spacy
+ModuleNotFoundError: No module named 'spacy'
+>>>
+>>> # Load English NLP model
+>>> nlp = spacy.load("en_core_web_sm")
+Traceback (most recent call last):
+  File "<python-input-5>", line 1, in <module>
+    nlp = spacy.load("en_core_web_sm")
+          ^^^^^
+NameError: name 'spacy' is not defined
+>>>
+>>> # Initialize Genius API
+>>> genius = lyricsgenius.Genius(ZWd8juNbjmir3bzp1x5jqDCh7_QKssNjjE1M7S5P8V1lCWKN2qL4YvZXooEGAcJz)
+Traceback (most recent call last):
+  File "<python-input-8>", line 1, in <module>
+    genius = lyricsgenius.Genius(ZWd8juNbjmir3bzp1x5jqDCh7_QKssNjjE1M7S5P8V1lCWKN2qL4YvZXooEGAcJz)
+             ^^^^^^^^^^^^
+NameError: name 'lyricsgenius' is not defined
+>>>
+>>> def get_lyrics(song_title):
+...         try:
+...                         song = genius.search_song(song_title)
+...                                 if song:
+...                                                     return song.lyrics
+...                                                         except Exception as e:
+...                                                                         print(f"Error fetching song_title: e")
+...                                                                             return ""
+...
+  File "<python-input-10>", line 4
+    if song:
+IndentationError: unexpected indent
+>>>
+>>> def split_verses(lyrics):
+...             parts = lyrics.split('nn')  # Split by two newlines (common verse separator)
+...                 return .strip() for p in parts if p.strip()
+...
+  File "<python-input-12>", line 3
+    return .strip() for p in parts if p.strip()
+IndentationError: unexpected indent
+>>>     def smart_merge(lyrics_blocks, max_verses=10):
+  File "<python-input-13>", line 1
+    def smart_merge(lyrics_blocks, max_verses=10):
+IndentationError: unexpected indent
+>>>     random.shuffle(lyrics_blocks)  # Shuffle for creativity
+  File "<python-input-14>", line 1
+    random.shuffle(lyrics_blocks)  # Shuffle for creativity
+IndentationError: unexpected indent
+>>>     selected = lyrics_blocksmax_verses
+  File "<python-input-15>", line 1
+    selected = lyrics_blocksmax_verses
+IndentationError: unexpected indent
+>>>     return 'nn'.join(selected)
+  File "<python-input-16>", line 1
+    return 'nn'.join(selected)
+IndentationError: unexpected indent
+>>>
+>>>     def main():
+  File "<python-input-18>", line 1
+    def main():
+IndentationError: unexpected indent
+>>>     song_titles =         "Blinding Lights The Weeknd",
+  File "<python-input-19>", line 1
+    song_titles =         "Blinding Lights The Weeknd",
+IndentationError: unexpected indent
+>>>         "Bad Habits Ed Sheeran",
+  File "<python-input-20>", line 1
+    "Bad Habits Ed Sheeran",
+IndentationError: unexpected indent
+>>>         "Levitating Dua Lipa"
+  File "<python-input-21>", line 1
+    "Levitating Dua Lipa"
+IndentationError: unexpected indent
+>>>
+>>>
+>>>     all_blocks = ]
+  File "<python-input-24>", line 1
+    all_blocks = ]
+IndentationError: unexpected indent
+>>>
+>>>     for title in song_titles:
+  File "<python-input-26>", line 1
+    for title in song_titles:
+IndentationError: unexpected indent
+>>>         lyrics = get_lyrics(title)
+  File "<python-input-27>", line 1
+    lyrics = get_lyrics(title)
+IndentationError: unexpected indent
+>>>         if lyrics:
+  File "<python-input-28>", line 1
+    if lyrics:
+IndentationError: unexpected indent
+>>>             verses = split_verses(lyrics)
+  File "<python-input-29>", line 1
+    verses = split_verses(lyrics)
+IndentationError: unexpected indent
+>>>             all_blocks.extend(verses)
+  File "<python-input-30>", line 1
+    all_blocks.extend(verses)
+IndentationError: unexpected indent
+>>>
+>>>     if all_blocks:
+  File "<python-input-32>", line 1
+    if all_blocks:
+IndentationError: unexpected indent
+>>>         mashup = smart_merge(all_blocks)
+  File "<python-input-33>", line 1
+    mashup = smart_merge(all_blocks)
+IndentationError: unexpected indent
+>>>         print("n----- MASHUP LYRICS -----n")
+  File "<python-input-34>", line 1
+    print("n----- MASHUP LYRICS -----n")
+IndentationError: unexpected indent
+>>>         print(mashup)
+  File "<python-input-35>", line 1
+    print(mashup)
+IndentationError: unexpected indent
+>>>     else:
+  File "<python-input-36>", line 1
+    else:
+IndentationError: unexpected indent
+>>>         print("No lyrics were found.")
+  File "<python-input-37>", line 1
+    print("No lyrics were found.")
+IndentationError: unexpected indent
+>>>
+>>> if __name__ == "__main__":
+...                 main()
+...
