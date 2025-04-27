@@ -7,3 +7,12 @@ nlp = spacy.load("en_core_web_sm")
 
 # Initialize Genius API
 genius = lyricsgenius.Genius(ZWd8juNbjmir3bzp1x5jqDCh7_QKssNjjE1M7S5P8V1lCWKN2qL4YvZXooEGAcJz)
+
+def get_lyrics(song_title):
+    try:
+        song = genius.search_song(song_title)
+        if song:
+            return song.lyrics
+    except Exception as e:
+        print(f"Error fetching {song_title}: {e}")
+    return ""
