@@ -16,3 +16,38 @@ def get_lyrics(song_title):
     except Exception as e:
         print(f"Error fetching {song_title}: {e}")
     return ""
+
+
+def split_verses(lyrics):
+    parts = lyrics.split('\n\n')  # Split by two newlines (common verse separator)
+    return [p.strip() for p in parts if p.strip()]
+
+    def smart_merge(lyrics_blocks, max_verses=10):
+    random.shuffle(lyrics_blocks)  # Shuffle for creativity
+    selected = lyrics_blocks[:max_verses]
+    return '\n\n'.join(selected)
+
+    def main():
+    song_titles = [
+        "Blinding Lights The Weeknd",
+        "Bad Habits Ed Sheeran",
+        "Levitating Dua Lipa"
+    ]
+
+    all_blocks = []
+
+    for title in song_titles:
+        lyrics = get_lyrics(title)
+        if lyrics:
+            verses = split_verses(lyrics)
+            all_blocks.extend(verses)
+
+    if all_blocks:
+        mashup = smart_merge(all_blocks)
+        print("\n----- MASHUP LYRICS -----\n")
+        print(mashup)
+    else:
+        print("No lyrics were found.")
+
+if __name__ == "__main__":
+    main()
